@@ -1,5 +1,11 @@
 source "https://rubygems.org"
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+git_source(:goji_labs) do |repo|
+  credentials = "x-access-token:#{ENV['GITHUB_ACCESS_TOKEN']}@" if ENV['GITHUB_ACCESS_TOKEN'] && ENV['GITHUB_ACCESS_TOKEN'] != ''
+  credentials ? "https://#{credentials}github.com/gojilabs/#{repo}" : "git@github.com:gojilabs/#{repo}.git"
+end
 
 # Specify your gem's dependencies in standards.gemspec.
 gemspec
