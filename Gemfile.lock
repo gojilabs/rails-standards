@@ -115,7 +115,7 @@ GEM
       i18n (>= 1.8.11, < 2)
     ffaker (2.21.0)
     ffi (1.15.5)
-    globalid (1.0.0)
+    globalid (1.0.1)
       activesupport (>= 5.0)
     haml (5.2.2)
       temple (>= 0.8.0)
@@ -127,7 +127,7 @@ GEM
       rubocop (>= 0.50.0)
       sysexits (~> 1.1)
     hashdiff (1.0.1)
-    i18n (1.10.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
     irb (1.4.1)
@@ -163,7 +163,7 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    minitest (5.15.0)
+    minitest (5.17.0)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -180,6 +180,8 @@ GEM
       timeout
     nio4r (2.5.8)
     nokogiri (1.13.6-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     oj (3.13.11)
     parallel (1.22.1)
@@ -323,7 +325,7 @@ GEM
     tilt (2.0.10)
     timecop (0.9.5)
     timeout (0.2.0)
-    tzinfo (2.0.4)
+    tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
     uniform_notifier (1.16.0)
@@ -348,6 +350,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   brakeman
