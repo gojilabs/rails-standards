@@ -4,7 +4,7 @@ module Standards
     config.generators.api_only = true
 
     config.to_prepare do
-      load '../../config/initializers/oj'
+      # load '../../config/initializers/oj'
     end
   end
 end
