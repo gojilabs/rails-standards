@@ -10,7 +10,6 @@ end
 # Specify your gem's dependencies in standards.gemspec.
 gemspec
 
-
 group :development do
   gem 'brakeman'
   gem 'bullet'
