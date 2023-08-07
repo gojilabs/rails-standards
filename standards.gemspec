@@ -22,12 +22,15 @@ Gem::Specification.new do |spec|
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   end
 
-  spec.add_dependency 'lograge',   '~> 0.12'
-  spec.add_dependency 'oj',        '~> 3.13'
-  spec.add_dependency 'puma',      '~> 5.6'
-  spec.add_dependency 'rack-cors', '~> 1.1'
-  spec.add_dependency 'rails',     '>= 7.0.3'
-  spec.add_dependency 'rollbar',   '~> 3.3'
-  spec.add_dependency 'rswag-api', '~> 2.5'
-  spec.add_dependency 'rswag-ui',  '~> 2.5'
+  spec.add_dependency 'lograge',       '~> 0.12'
+  spec.add_dependency 'oj',            '~> 3.15'
+  spec.add_dependency 'puma',          '~> 5.6'
+  spec.add_dependency 'rack-cors',     '~> 1.1'
+  spec.add_dependency 'rails',         '>= 7.0.3'
+  spec.add_dependency 'rollbar',       '~> 3.3'
+  spec.add_dependency 'rswag-api',     '~> 2.10'
+  spec.add_dependency 'rswag-ui',      '~> 2.10'
+  spec.add_dependency 'faraday',       '~> 2.7'
+  spec.add_dependency 'httpx',         '~> 0.24'
+  spec.add_dependency 'faraday-retry', '~> 2.2'
 end
