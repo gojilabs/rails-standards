@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    standards (0.1.0)
+    standards (0.1.1)
       faraday (~> 2.7)
       faraday-retry (~> 2.2)
       httpx (~> 0.24)
