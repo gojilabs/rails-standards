@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'lograge',       '~> 0.12'
   spec.add_dependency 'oj',            '~> 3.15'
-  spec.add_dependency 'puma',          '~> 5.6'
+  spec.add_dependency 'puma',          '>= 5.6', '< 7.0'
   spec.add_dependency 'rack-cors',     '~> 1.1'
   spec.add_dependency 'rails',         '>= 7.0.3'
   spec.add_dependency 'rollbar',       '~> 3.3'
