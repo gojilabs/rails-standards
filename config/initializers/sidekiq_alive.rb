@@ -2,8 +2,15 @@
 
 if defined?(Sidekiq) && defined?(SidekiqAlive)
   SidekiqAlive.setup do |config|
-    config.shutdown_callback = proc do
-      Sidekiq::Queue.all.each { |queue| queue.clear if queue.name.starts_with?(config.queue_prefix.to_s) }
+    config.callback = proc do
+      Sidekiq::Queue.all.each do |queue|
+        # skip other queues (default, critical, etc.)
+        next unless queue.name.starts_with?(config.queue_prefix.to_s)
+        # keep actual sidekiq-alive-<hostname> queue
+        next if queue.name == "#{config.queue_prefix}-#{SidekiqAlive.hostname}"
+
+        queue.clear
+      end
     end
   end
 end
