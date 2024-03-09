@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rollbar'
+
 Rollbar.configure do |config|
   # Without configuration, Rollbar is enabled in all environments.
   # To disable in specific environments, set config.enabled=false.
@@ -36,7 +38,13 @@ Rollbar.configure do |config|
 
   # Enable asynchronous reporting (uses girl_friday or Threading if girl_friday
   # is not installed)
-  config.use_sidekiq 'queue' => 'rollbar'
+  if defined?(Sidekiq)
+    config.use_sidekiq 'queue' => 'rollbar'
+  else
+    config.async_handler = Proc.new { |payload|
+     Thread.new { Rollbar.process_from_async_handler(payload) }
+    }
+  end
   config.failover_handlers = [Rollbar::Delay::Thread]
 
   # Supply your own async handler:
