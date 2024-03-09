@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'rswag/api'
 
 Rswag::Api.configure do |c|
   # Specify a root folder where Swagger JSON files are located
