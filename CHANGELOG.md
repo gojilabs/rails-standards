@@ -1,3 +1,8 @@
+## 0.4.0 (04/24/2024)
+
+- skip ActionController::RoutingError Rollbar errors
+- dependencies update
+
 ## 0.3.0 (02/14/2024)
 
 - updated dependencies (rails 7.1.3)
